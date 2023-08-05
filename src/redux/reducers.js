@@ -9,19 +9,19 @@ import {
 
 
 const initialState = {
-    posts: [],
-  };
-  
-  const rootReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case 'FETCH_POSTS_SUCCESS':
-        return {...state, post:[...state.post,action.payload]};
-     /*  return  [...state.post, action.payload]; */
-      case 'FETCH_POSTS_FAILURE':
-        return state;
-      default:
-        return state;
-    }
-  };
-  
-  export default rootReducer;
+  posts: [],
+};
+
+const rootReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'FETCH_POSTS_SUCCESS':
+      return { ...state, posts: action.payload };
+    case 'FETCH_POSTS_FAILURE':
+      return state;
+    default:
+      return state;
+  }
+};
+
+
+export default rootReducer;

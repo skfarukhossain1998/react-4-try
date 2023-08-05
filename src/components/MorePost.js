@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchPosts } from '../redux/actions';
 import { Link } from 'react-router-dom';
 import arrow from './arrow.png';
-import './home.css'; // Import the home.css file
-const HomePage = () => {
+import './morePost.css'; // Import the home.css file
+const MorePost = () => {
   const dispatch = useDispatch();
   const posts = useSelector(state => state.posts);
   const [searchTerm, setSearchTerm] = useState('');
@@ -29,16 +29,9 @@ const HomePage = () => {
   };
 
   return (
-    <div className="home-page">
-      <h1>Social Media For Traveller</h1>
-      <input
-        type="text"
-        className="search-bar"
-        placeholder="Search by ID..."
-        value={searchTerm}
-        onChange={handleSearchChange}
-      />
-      <div className="post-cards">
+    <div className="more-post">
+      
+      <div className="post-cards1">
         {searchResults.map(post => (
           <div key={post.id} className="post-card">
             <img style={{ width: "100%", height: "100%" }} src={post.imgSrc} alt={`Post ${post.id}`} />
@@ -62,4 +55,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default MorePost;

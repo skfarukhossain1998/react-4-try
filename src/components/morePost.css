@@ -1,0 +1,88 @@
+/* src/home.css */
+.more-post {
+  
+display: flex;
+flex-direction: column;
+/*  align-items: center; */
+}
+
+.more-post h1 {
+font-size: 2rem;
+margin-bottom: 10px;
+}
+
+.post-cards1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+ /*  border: 2px solid green; */
+  justify-content: space-between;
+  width:100%;
+
+}
+
+.post-card {
+  /* width: calc(31.33% - 10px);  */   /* Distribute 3 cards per row with 20px gap */
+  width: 30%;
+  height: 350px; /* Set a fixed height for the cards */
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  justify-content: space-between;
+  /* border: 2px solid purple; */
+  
+}
+.post-cards1 .post-card img {
+  width: 100%;
+  height: 350px; /* Set a fixed height for the images */
+  object-fit: cover;
+  border-radius: 15px;
+  /* border: 2px solid black; */
+/*    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); */
+
+}
+.post-cards1 .paraImg .next link img{
+  width: 100%;
+  height: 350px; /* Set a fixed height for the images */
+
+}
+
+.post-details {
+  width: 300px;
+flex: 1;
+/*  border: 2px solid blue; */
+}
+
+.post-details h3 {
+margin: 0;
+font-size: 1rem;
+color: #333;
+}
+
+.post-cards .paraImg .post-details p {
+margin: 10px 0;
+font-size: .9rem;
+color: #666;
+}
+.post-cards .paraImg .readMore{
+  color: orange;
+  display: inline;
+ 
+} 
+.paraImg .imgTag img{
+  margin-top: 25px;
+  height: 50px;
+  margin-bottom: 30px;
+}
+
+.paraImg{
+
+  display: flex;
+  gap: 2px;
+  margin-top: 35px;
+  
+  /* border: 2px solid black; */
+}

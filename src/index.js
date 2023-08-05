@@ -45,7 +45,7 @@ import store from './redux/store';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import {createRoot} from 'react-dom/client'
-
+import './App.css'; // Import the CSS file
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 

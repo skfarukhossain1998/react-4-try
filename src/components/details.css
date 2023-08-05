@@ -1,0 +1,100 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.allPart{
+    /* border: 2px solid green; */
+    padding: 0 20px 0 20px;
+}
+
+.allPart .userInfo{
+    /* border: 2px solid black; */
+    display: flex;
+    gap:50px
+}
+
+.allPart .userInfo .tagImg{
+    /* border: 2px solid blue; */
+    width: 350px;
+}
+.allPart .userInfo .tagImg h2{
+    margin-bottom: 15px;
+}
+.allPart .userInfo .tagImg img{
+    border-radius: 25px;
+   width: 100%;
+    height: 330px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Customize the shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+   
+}
+.allPart .userInfo .tagImg h4{
+    font-size:20px ;
+   
+}
+.contain{
+    position: relative;
+  text-align: center;
+  color:white;
+}
+.centered {
+    font-size: 20px;
+    font-weight: 600;
+    width: 300px;
+/*     border: 2px solid blue; */
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.allPart .userInfo .btnBody{
+    width: 60%;
+    /* border: 2px solid orange; */
+    margin-top: 45px;
+}
+/* .allPart .userInfo .btnBody .btn{
+    color: gray;
+    background-color: green;
+margin-right: 20px;
+}
+ */
+.allPart .userInfo .btnBody .btn .btn1{
+    color: black;
+    background-color: white;
+    width: 120px;
+    height: 40px;
+    font-size:15px;
+    font-weight: 600;
+    border-radius: 10px;
+margin-right: 20px;
+margin-bottom: 5px;
+cursor: pointer;
+}
+
+.allPart .userInfo .btnBody .btn .fixed{
+    color: white;
+    text-decoration: none;
+    outline: none;
+    background-color: #F05A22;
+   
+}
+
+/*User Details*/
+h1,h3{
+    margin-top:15px ;
+}
+/*User Details*/
+.allPart .userInfo .btnBody .userBody{
+    /* border: 2px solid purple; */
+    margin-top: 15px;
+
+}
+
+
+h2{
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+}

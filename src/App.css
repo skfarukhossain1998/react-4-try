@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.post-card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.post-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.post-details {
+  flex: 1;
+  margin-left: 10px;
 }
+
+.post-details h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.post-details p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+.post-details a {
+  display: block;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.detail-page {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.detail-page img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.detail-page h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.detail-page h3 {
+  margin: 15px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.detail-page p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.detail-page button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.user-details {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.user-details h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+
+

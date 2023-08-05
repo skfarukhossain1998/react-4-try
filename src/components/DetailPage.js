@@ -1,102 +1,70 @@
-/* // src/components/DetailPage.js
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+
+// src/components/DetailPage.js
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchPosts } from '../redux/actions';
-
+import UserDetails from './UserDetails';
+import { Link } from 'react-router-dom';
+import MorePost from './MorePost'
+import './details.css'; // Import the home.css file
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const DetailPage = () => {
-  const { id } = useParams();
-  const dispatch = useDispatch();
   const { posts } = useSelector((state) => state);
-  const post = posts.find((p) => p.id === parseInt(id));
 
-  useEffect(() => {
-    dispatch(fetchPosts());
-  }, [dispatch]);
+  const { id } = useParams();
+  const post = useSelector(state =>
+   
+    state.posts.find(post => post.id === parseInt(id))
+    
+  );
 
-  const [showDetails, setShowDetails] = useState(false);
-  const [showUserInfo, setShowUserInfo] = useState(false);
-
-  const toggleDetails = () => {
-    setShowDetails(!showDetails);
-    setShowUserInfo(false);
-  };
-
-  const toggleUserInfo = () => {
-    setShowUserInfo(!showUserInfo);
-    setShowDetails(false);
-  };
+  const [selectedTab, setSelectedTab] = useState('details');
 
   if (!post) {
-    return <div>Post not found</div>;
+    
+    return <div>Loading...</div>;
   }
 
   return (
-    <div>
-      <h1>Detail Page</h1>
-      <h2>Post Number #{post.id}</h2>
-      <img src={`https://picsum.photos/200?random=${post.id}`} alt={`Image for Post #${post.id}`} />
+    <div className='allPart'>
+      <div className='userInfo '>
+
+        <div className='tagImg'>
+            <h2>  <Link to="/"><i class="fa-solid fa-circle-arrow-left" style={{color: "#88aaaa"}}></i></Link> {`Post number #${post.id}`}</h2>
+            <div className='contain'>
+              <img src={post.imgSrc} alt={`Post ${post.id}`} />
+             <div class="centered">{post.title}</div>
+            </div>
+          </div> {/* Tag and Image */}
+
+
+            <div className='btnBody'>
+              <div className='btn'>
+              <button className='btn1 fixed' onClick={() => setSelectedTab('details')}>Details</button>
+              <button className='btn1' onClick={() => setSelectedTab('userDetails')}>User Info</button>
+            </div>
+          
+          {selectedTab === 'details' && (
+            <div className='userBody'>
+                 
+                  <p>{post.body}</p>
+             </div>
+              )}
+              {selectedTab === 'userDetails' && <UserDetails userId={post.userId} />}
+             
+              </div> 
+            </div>{/* User Info */}
+
+
+
 
       <div>
-        <button onClick={toggleDetails}>Show Details</button>
-        <button onClick={toggleUserInfo}>Show User Info</button>
+        <h1>More Posts</h1>
+        <MorePost /> {/* impot the More Post File  */}
       </div>
 
-      <div>
-        {showDetails && (
-          <div>
-            <h3>Title: {post.title}</h3>
-            <p>Body: {post.body}</p>
-          </div>
-        )}
-
-        {showUserInfo && (
-          <div>
-            <p>User ID: {post.userId}</p>
-          </div>
-        )}
-      </div>
-
-      <h1>More Posts</h1>
-      <div>
-        {posts.map((item) => (
-          <div key={item.id}>
-            <h3>{item.title}</h3>
-            <p>{`${item.body.slice(0, 100)}...`}</p>
-            <a href={`/item/${item.id}`}>Read More...</a>
-          </div>
-        ))}
-      </div>
     </div>
   );
 };
 
 export default DetailPage;
- */
-
-// src/components/DetailPage.js
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-
-function DetailPage() {
-  const { id } = useParams();
-  const post = useSelector(state =>
-    state.posts.find(post => post.id === parseInt(id))
-  );
-
-  if (!post) {
-    return <div>Loading...</div>;
-  }
-
-  return (
-    <div>
-      <h2>{post.title}</h2>
-      <p>{post.body}</p>
-      <p>User ID: {post.userId}</p>
-    </div>
-  );
-}
-
-export default DetailPage;
-
