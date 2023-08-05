@@ -41,7 +41,7 @@ const HomePage = () => {
       <div className="post-cards">
         {searchResults.map(post => (
           <div key={post.id} className="post-card">
-            <img style={{ width: "100%", height: "100%" }} src={post.imgSrc} alt={`Post ${post.id}`} />
+            <img style={{ width: "100%", height: "50%" }} src={post.imgSrc} alt={`Post ${post.id}`} />
             
             <div className='paraImg'>  
                   <div className="post-details">

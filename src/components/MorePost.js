@@ -33,11 +33,11 @@ const MorePost = () => {
       
       <div className="post-cards1">
         {searchResults.map(post => (
-          <div key={post.id} className="post-card">
-            <img style={{ width: "100%", height: "100%" }} src={post.imgSrc} alt={`Post ${post.id}`} />
+          <div key={post.id} className="post-card1">
+            <img style={{ width: "100%", height: "50%" }} src={post.imgSrc} alt={`Post ${post.id}`} />
             
             <div className='paraImg'>  
-                  <div className="post-details">
+                  <div className="post-details1">
                     <h3>{post.title.slice(0, 30)}{post.title.length > 20}...</h3>
                     <p>{post.body.slice(0, 100)}{post.body.length > 80},<Link  className='readMore' to={`/item/${post.id}`}>Read More </Link>
                     </p>
